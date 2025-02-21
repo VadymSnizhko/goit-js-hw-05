@@ -1,33 +1,61 @@
 Second Home Work
 
-audit task 1: console.log( isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1
-}, 8) ); // true
+audit task 1: console.log( getUserNames([ { name: "Moore Hensley", email:
+"moorehensley@indexia.com", balance: 2811 }, { name: "Sharlene Bush", email:
+"sharlenebush@tubesys.com", balance: 3821 }, { name: "Ross Vazquez", email:
+"rossvazquez@xinware.com", balance: 3793 }, { name: "Elma Head", email:
+"elmahead@omatom.com", balance: 2278 }, { name: "Carey Barr", email:
+"careybarr@nurali.com", balance: 3951 }, { name: "Blackburn Dotson", email:
+"blackburndotson@furnigeer.com", balance: 1498 }, { name: "Sheree Anthony",
+email: "shereeanthony@kog.com", balance: 2764 }, ]) ); // ["Moore Hensley",
+"Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson",
+"Sheree Anthony"]
 
-console.log( isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12) ); //
-false
+audit task 2: const allUsers = [ { name: "Moore Hensley", friends: ["Sharron
+Pace"] }, { name: "Sharlene Bush", friends: ["Briana Decker", "Sharron Pace"] },
+{ name: "Ross Vazquez", friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi
+Buckner"] }, { name: "Elma Head", friends: ["Goldie Gentry", "Aisha Tran"] }, {
+name: "Carey Barr", friends: ["Jordan Sampson", "Eddie Strong"] }, { name:
+"Blackburn Dotson", friends: ["Jacklyn Lucas", "Linda Chapman"] }, { name:
+"Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"] } ];
 
-console.log( isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14) ); //
-true
+console.log(getUsersWithFriend(allUsers, "Briana Decker")); // [ // { // name:
+"Sharlene Bush", // friends: ["Briana Decker", "Sharron Pace"] // }, // { //
+name: "Sheree Anthony", // friends: ["Goldie Gentry", "Briana Decker"] // } // ]
 
-console.log( isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7) ); //
-false
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry")); // [ // { // name:
+"Elma Head", // friends: ["Goldie Gentry", "Aisha Tran"] // }, // { // name:
+"Sheree Anthony", // friends: ["Goldie Gentry", "Briana Decker"] // } // ]
 
-audit task 2: console.log( calcAverageCalories([ { day: "monday", calories: 3010
-}, { day: "tuesday", calories: 3200 }, { day: "wednesday", calories: 3120 }, {
-day: "thursday", calories: 2900 }, { day: "friday", calories: 3450 }, { day:
-"saturday", calories: 3280 }, { day: "sunday", calories: 3300 } ]) ); // 3180
+console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); // []
 
-console.log( calcAverageCalories([ { day: "monday", calories: 2040 }, { day:
-"tuesday", calories: 2270 }, { day: "wednesday", calories: 2420 }, { day:
-"thursday", calories: 1900 }, { day: "friday", calories: 2370 }, { day:
-"saturday", calories: 2280 }, { day: "sunday", calories: 2610 } ]) ); // 2270
+audit task 3: console.log( sortByDescendingFriendCount([ { name: "Moore
+Hensley", friends: ["Sharron Pace"], gender: "male" }, { name: "Sharlene Bush",
+friends: ["Briana Decker", "Sharron Pace"], gender: "female" }, { name: "Ross
+Vazquez", friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+gender: "male" }, { name: "Elma Head", friends: ["Goldie Gentry", "Aisha Tran"],
+gender: "female" }, { name: "Carey Barr", friends: ["Jordan Sampson", "Eddie
+Strong"], gender: "male" }, { name: "Blackburn Dotson", friends: ["Jacklyn
+Lucas", "Linda Chapman"], gender: "male" }, { name: "Sheree Anthony", friends:
+["Goldie Gentry", "Briana Decker"], gender: "female" } ]) ); // [ // { // name:
+"Ross Vazquez", // friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi
+Buckner"], // gender: "male" // }, // { // name: "Sharlene Bush", // friends:
+["Briana Decker", "Sharron Pace"], // gender: "female" // }, // { // name: "Elma
+Head", // friends: ["Goldie Gentry", "Aisha Tran"], // gender: "female" // }, //
+{ // name: "Carey Barr", // friends: ["Jordan Sampson", "Eddie Strong"], //
+gender: "male" // }, // { // name: "Blackburn Dotson", // friends: ["Jacklyn
+Lucas", "Linda Chapman"], // gender: "male" // }, // { // name: "Sheree
+Anthony", // friends: ["Goldie Gentry", "Briana Decker"], // gender: "female" //
+}, // { // name: "Moore Hensley", // friends: ["Sharron Pace"], // gender:
+"male" // } // ]
 
-console.log( calcAverageCalories([]) ); // 0
+audit task 4:const clients = [ { name: "Moore Hensley", gender: "male", balance:
+2811 }, { name: "Sharlene Bush", gender: "female", balance: 3821 }, { name:
+"Ross Vazquez", gender: "male", balance: 3793 }, { name: "Elma Head", gender:
+"female", balance: 2278 }, { name: "Carey Barr", gender: "male", balance: 3951
+}, { name: "Blackburn Dotson", gender: "male", balance: 1498 }, { name: "Sheree
+Anthony", gender: "female", balance: 2764 } ];
 
-audit task 3: console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+console.log(getTotalBalanceByGender(clients, "male")); // 12053
 
-profile.changeUsername("Marco"); console.log(profile.getInfo()); // "Marco has
-300 active hours!"
-
-profile.updatePlayTime(20); console.log(profile.getInfo()); // "Marco has 320
-active hours!"
+console.log(getTotalBalanceByGender(clients, "female")); // 8863
